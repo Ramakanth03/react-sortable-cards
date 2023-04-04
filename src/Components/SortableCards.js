@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import { ReactSortable } from "react-sortablejs";
 
-// import { ReactSortable, Sortable, MultiDrag, Swap } from "react-sortablejs";
-
-// mount whatever plugins you'd like to. These are the only current options.
-// Sortable.mount(new MultiDrag(), new Swap());
-
 const SortableCards = (props) => {
   const [state, setState] = useState([
     {
@@ -83,8 +78,6 @@ const SortableCards = (props) => {
   return (
     <ReactSortable
       className="sortableContainer"
-      multiDrag={true} // enables mutidrag
-      //   swap // enables swap
       list={state}
       setList={setState}
     >
