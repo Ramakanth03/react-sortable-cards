@@ -11,7 +11,7 @@ const SortableCards = (props) => {
   }, []);
 
   const fetchData = () => {
-    return fetch("https://jsonplaceholder.typicode.com/todos")
+    return fetch("fakeData.json")
       .then((response) => response.json())
       .then((data) => setItems(data));
   };
@@ -26,8 +26,9 @@ const SortableCards = (props) => {
     >
       {items.map((item) => (
         <div className="card" style={{ cursor: "move" }} key={item.id}>
-          <span>
-            {item.id}. {item.title}
+          <span style={{ width: "100%", wordWrap: "break-word" }}>
+            {item.id}. {item.firstName} {item.lastName} {item.email}{" "}
+            {item.gender}
           </span>
         </div>
       ))}
